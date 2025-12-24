@@ -16,5 +16,5 @@ spec:
   containers:
     - name: webapp1
       image: nginx:1.14.2
-    - name: webapp2
-      image: nginx:1.14.2
+    - name: debug
+      image: rkalluru/learnk8s:rhel9-bare
