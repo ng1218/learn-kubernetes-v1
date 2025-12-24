@@ -18,9 +18,5 @@ spec:
   containers:
     - name: webapp1
       image: nginx:1.14.2
-      ports:
-        - containerPort: 80
     - name: webapp2
       image: nginx:1.14.2
-      ports:
-        - containerPort: 90
