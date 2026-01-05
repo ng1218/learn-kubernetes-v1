@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.14.2
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: cart
+  template:
+    metadata:
+      labels:
+        tier: cart
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.14.2
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: user
+  template:
+    metadata:
+      labels:
+        tier: user
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.14.2
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shipping
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: shipping
+  template:
+    metadata:
+      labels:
+        tier: shipping
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.14.2
