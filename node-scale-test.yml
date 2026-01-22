@@ -24,10 +24,10 @@ spec:
       image: nginx
       resources:
         requests:
-          memory: "2000Mi"
+          memory: "3000Mi"
           cpu: "50m"
         limits:
-          memory: "2100Mi"
+          memory: "3100Mi"
           cpu: "200m"
 ---
 apiVersion: v1
@@ -40,8 +40,8 @@ spec:
       image: nginx
       resources:
         requests:
-          memory: "1000Mi"
+          memory: "3000Mi"
           cpu: "50m"
         limits:
-          memory: "1100Mi"
+          memory: "3100Mi"
           cpu: "200m"
