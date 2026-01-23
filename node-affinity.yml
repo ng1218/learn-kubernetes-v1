@@ -16,10 +16,10 @@ spec:
         - weight: 100
           preference:
             matchExpressions:
-              - key: yyy
+              - key: choice
                 operator: In
                 values:
-                  - abc
+                  - one
   containers:
     - name: nginx
       image: nginx:1.14.2
