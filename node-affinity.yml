@@ -11,7 +11,7 @@ spec:
               - key: topology.kubernetes.io/region
                 operator: In
                 values:
-                  - ukwest1
+                  - ukwest
       preferredDuringSchedulingIgnoredDuringExecution:
         - weight: 100
           preference:
