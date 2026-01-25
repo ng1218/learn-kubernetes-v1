@@ -59,6 +59,15 @@ spec:
                 values:
                   - S2
           topologyKey: choice
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+              - key: security
+                operator: In
+                values:
+                  - S2
+          topologyKey: choice
   containers:
     - name: nginx
       image: nginx
