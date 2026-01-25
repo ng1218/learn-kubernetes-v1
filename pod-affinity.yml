@@ -57,7 +57,7 @@ spec:
               - key: security
                 operator: In
                 values:
-                  - S2
+                  - S1
           topologyKey: choice
     podAntiAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
