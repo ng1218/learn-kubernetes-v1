@@ -1,0 +1,43 @@
+apiVersion: "autoscaling.k8s.io/v1"
+kind: VerticalPodAutoscaler
+metadata:
+  name: vpa-test
+spec:
+  targetRef:
+    apiVersion: "apps/v1"
+    kind: Deployment
+    name: vpa-test
+  resourcePolicy:
+    containerPolicies:
+      - containerName: '*'
+        minAllowed:
+          cpu: 500m
+        maxAllowed:
+          cpu: 600m
+        controlledResources: ["cpu"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vpa-test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vpa
+  template:
+    metadata:
+      labels:
+        app: vpa
+    spec:
+      containers:
+        - name: hpa
+          image: rkalluru/hpa
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
