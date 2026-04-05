@@ -52,16 +52,6 @@ spec:
       port: 80
       targetPort: 80
 ---
-kind: Pod
-apiVersion: v1
-metadata:
-  name: debug
-  namespace: default
-spec:
-  containers:
-    - name: debug
-      image: rkalluru/debug
----
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -71,10 +61,10 @@ spec:
   podSelector:
     matchLabels:
       appType: app
-    policyTypes:
-    - Ingress
-    - Egress
-    ingress:
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
     - from:
       - namespaceSelector:
           matchLabels:
