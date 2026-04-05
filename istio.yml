@@ -3,14 +3,14 @@ kind: Namespace
 metadata:
   name: example1
   labels:
-    istio-injection: enabled
+    istio-injection: disabled
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
   name: example2
   labels:
-    istio-injection: enabled
+    istio-injection: disabled
 ---
 apiVersion: apps/v1
 kind: Deployment
