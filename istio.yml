@@ -104,7 +104,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: debug
-  namespace: example1
+  namespace: default
 spec:
   containers:
     - name: debug
